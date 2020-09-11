@@ -1,0 +1,264 @@
+html{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+@font-face{
+    font-family: "Creighton Pro Medium";
+    src: url("../font/CreightonPro-Medium.otf");
+    font-weight: normal;
+}
+@font-face{
+    font-family: "Creighton Pro Bold";
+    src: url("../font/CreightonPro-Bold.otf");
+    font-weight: bold;
+}
+@font-face{
+    font-family: "Creighton Pro Light";
+    src: url("../font/CreightonPro-Light.otf");
+    font-weight: 300;
+}
+body{
+	transition: all 0.3s;
+	color: #fff;
+}
+section{
+    padding-top: 5%;
+	position: relative;
+	height:100vh;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+.row{
+	width: 100%;
+}
+.bg-red{
+	background-color:#a70000;
+}
+.bg-blue{
+	background-color:#0f1c40;
+}
+.lazy{
+    opacity: 0;
+    transition: all 0.3s;
+    font-family: "Creighton Pro Medium";
+    font-weight: normal;
+}
+.visible{
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+/*primeira tela: banner*/
+#logo{
+	width: auto;
+	height:100px;
+}
+.banner{
+	background-image: url('../img/banner.jpg');
+	padding: 15px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+.btn_down{
+	opacity: 0;
+	position: absolute;
+	bottom: 10px;
+	left:20%;
+	background: transparent;
+	border:3px solid #fff;
+	border-radius: 100%;
+	height:40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	animation: jump;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-delay: 2s;
+}
+.btn_down:after {
+    content: "";
+    border: 3px solid #fff;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg) translate(30%,30%);
+    border-top: none;
+    border-left: none;
+}
+/*segunda tela: promoção*/
+.row-title{
+    margin-bottom:7%;
+}
+.unidade,
+.unidades{
+    font-family: "Creighton Pro Light";
+    font-weight: 300;
+    position: relative;
+    padding-right: 70px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+}
+.unidade:after{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform:translateY(-50%);
+    font-size: 4rem;
+}
+.unidades{
+    padding:0;
+}  
+.texto-unidades{
+    font-size: 24px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-flow:row nowrap;
+}
+/*terceira tela: nossas lojas*/
+.img-local{
+    margin-right: 20px;
+}
+.content-local {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    height: 50vh;
+    padding: 0px 30px;
+}
+.text-transparent{
+    width:100%;
+    opacity:0.8;
+}
+/*quarta tela: regulamento*/
+.row-regulamento-texto{
+    display: flex;
+    min-height: 30vh;
+    align-items: center;
+}
+.row-regulamento-btn{
+    display: flex;
+    min-height: 30vh;
+    align-items: center;
+}
+.btn-regulamento{
+    padding: 10px;
+    background: #fff;
+    font-weight: 500;
+    width: 60%;
+    border-radius: 50px;
+    font-family: "Creighton Pro";
+    font-size:1.5rem;
+}
+/*quinta tela: redes sociais*/
+.social {
+    padding-top: 5%;
+    height: 100%;
+    min-height: 75vh;
+    position: relative;
+}
+#smartphone{
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    width: 40%;
+    right: 0;
+}
+/*footer*/
+.footer{
+    background: #860000;
+    padding: 10px;
+    text-align: center;
+}
+.footer a{
+    color: #fff;
+    text-decoration: none;
+}
+/*Animações, Efeitos e tamanhos de tela*/
+@keyframes jump{
+    0%{
+    	opacity: 0;
+        bottom: 10px;
+    }
+    0.5%{
+        opacity: 1;
+        bottom: 10px;
+    }
+    50%{
+        opacity: 1;
+    	bottom: 15px;
+    }
+    100%{
+        opacity: 1;
+    	bottom: 10px;
+    }
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+        margin-bottom: -10px;
+    }
+    100%{
+        opacity: 1;
+        margin-bottom: 0px;
+    }
+}
+@media (max-width: 1024px){
+    #banner{
+        background-image: url('../img/banner1024.jpg');
+        background-size: cover;
+    }
+    #smartphone {
+        width: 50%;
+    }
+}
+@media (max-width: 800px){
+    #banner{
+        background-image: url('../img/banner800.jpg');
+        background-size: cover;
+        background-position: top center;
+    }
+    #smartphone {
+        width: 50%;
+    }
+    section:not(#banner),
+    .social{
+        height:auto;
+        padding-bottom: 5%;
+    }
+    .btn-regulamento {
+        width: 100%;
+    }
+    .col-xs-6{
+        width: 50%;
+        max-width: 50%;
+    }
+    .img-local{
+        width: 50%;
+        margin: 20px auto;
+    }
+    .title{
+        font-size:2rem;
+    }
+
+}
+@media (max-width: 480px){
+    #smartphone{
+        display: none;
+    }
+    .social .img-fluid{
+        max-width: 80%;
+    }
+    .mb-xs-3{
+        margin-bottom:3rem;
+    }
+}
