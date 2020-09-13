@@ -249,9 +249,14 @@ section{
 
 }
 @media (max-width: 480px){
+
     #logo{
         width: auto;
         height:50px;
+    }
+    .unidade,
+    .unidades{
+        padding-right: 50px;
     }
     .img-local{
         margin: 36px auto;
