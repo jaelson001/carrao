@@ -49,6 +49,9 @@ section{
     animation-timing-function: ease-in;
 }
 /*primeira tela: banner*/
+.row-logo{
+    width: 100%;
+}
 #logo{
 	width: auto;
 	height:100px;
@@ -91,6 +94,9 @@ section{
 /*segunda tela: promoção*/
 .row-title{
     margin-bottom:7%;
+}
+.title{
+    width: 100%;
 }
 .unidade,
 .unidades{
@@ -249,15 +255,28 @@ section{
 
 }
 @media (max-width: 480px){
-
+    #banner{
+        background-image: url('../img/banner480.jpg');
+        background-size: cover;
+        background-position: top center;
+    }
+    .row-logo{
+        flex-direction: row-reverse;
+    }
     #logo{
         width: auto;
         height:50px;
     }
-    .unidade,
-    .unidades{
+    .title{
+        text-align: center;
+    }
+    .unidade{
         padding-right: 50px;
     }
+    .unidades{
+        padding-right: 0px;
+    }
+
     .img-local{
         margin: 36px auto;
         width: 40%;
