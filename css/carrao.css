@@ -30,9 +30,6 @@ section{
 	align-content: flex-start;
 	align-items: flex-start;
 }
-.row{
-	width: 100%;
-}
 .bg-red{
 	background-color:#a70000;
 }
@@ -252,6 +249,21 @@ section{
 
 }
 @media (max-width: 480px){
+    #logo{
+        width: auto;
+        height:50px;
+    }
+    .img-local{
+        margin: 36px auto;
+        width: 40%;
+
+    }
+    .text-uppercase.text-transparent{
+        font-size: 1.5rem;
+    }
+    .text-uppercase.h4.text-transparent{
+        font-size: 1.2rem;
+    }
     #smartphone{
         display: none;
     }
